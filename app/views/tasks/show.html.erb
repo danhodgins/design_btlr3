@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
+
+<hr/>
+<h2>Notes On This task </h2>
+<ul>
+<% @task.notes.each do |note| %>
+<li><%= note.created_at.strftime('%m/%d/%Y') %> - 
+<%= note.body %> - <%= link_to "edit", edit_note_path(note) %>
+<% end %></li>
+</ul>
+
+<%#= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
+<%#= render :partial=>"new_note", :locals=>{:note=>Note.new(:noteable_type=>"task", :noteable_id=>3 )} %>
+<%= render :partial=>"new_note", :locals=>{:note=>@task.notes.build} %>

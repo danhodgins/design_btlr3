@@ -1,0 +1,27 @@
+
+Rails BUILD vs CREATE
+build and save are equivalent to create
+
+---------
+FEATURES
+
+Devise - users, accounts, logins
+Subscriptions 
+Stripe - subscription payment processing 
+Can Can - roles and permissions 
+
+-----
+
+class Task < ApplicationRecord
+  has_many :notes, as: :noteable
+  #Need optional on the belongs_to association below to avoid "job id must exist" error 
+  
+  belongs_to :job, optional: true
+end
+
+Here is the server log for the job must exist error  - Unpermitted parameter: :job_id 
+
+Started POST "/tasks" for 127.0.0.1 at 2017-12-09 12:41:46 -0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QorxxVQTYjhuOqwhlXR6jl6KYaGi0hvsdk1VkRlBYwNb30h9Vzji+Kjg+fl9nJXAI83LfwrfJOv2bt6tU0fc+w==", "task"=>{"title"=>"qqq", "job_id"=>"3"}, "commit"=>"Create Task"}
+Unpermitted parameter: :job_id

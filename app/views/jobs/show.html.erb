@@ -1,0 +1,49 @@
+
+<h1>Design BTLR Job</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Title:</strong>
+	<%= @job.title %>
+</p>
+
+<p>
+	<strong>Body:</strong>
+	<%= @job.body %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
+
+<hr/>
+<h2>Notes On This job </h2>
+<ul>
+	<% @job.notes.each do |note| %>
+	<li><%= note.created_at.strftime('%m/%d/%Y') %> - 
+		<%= note.body %> - <%= link_to "edit", edit_note_path(note) %>
+		<% end %></li>
+	</ul>
+
+	<%#= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
+	<%#= render :partial=>"new_note", :locals=>{:note=>Note.new(:noteable_type=>"job", :noteable_id=>3 )} %>
+
+	<!-- Use build here, due to the polymorphic association --> 
+<%= render :partial=>"new_note", :locals=>{:note=>@job.notes.build} %>
+
+	<hr/>
+	<h2>Add a Task</h2>
+	<ul>
+		<% @job.tasks.each do |task| %>
+		<li><%= task.created_at.strftime('%m/%d/%Y') %> - 
+			<%= task.title %> - <%= link_to "edit", edit_task_path(task) %>
+			<% end %></li>
+		</ul>
+
+		<%#= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
+		<%#= render :partial=>"new_note", :locals=>{:note=>Note.new(:noteable_type=>"job", :noteable_id=>3 )} %>
+
+		<!-- Use Task.new here, due to the has_many association (I think) --> 
+	
+	<%= render :partial=>"new_task", :locals=>{:task=>Task.new(:job_id=>@job.id)} %>
+
