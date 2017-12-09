@@ -1,6 +1,19 @@
 
+--------
+HOW TO SWITCH GIT BRANCHES
+JUST CHECKOUT MASTER, THAT WILL SWITCH YOU
+Dans-MacBook-Air:design_btlr3 danhodgins$ git checkout master
+M	app/views/layouts/application.html.erb
+M	config/routes.rb
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+Dans-MacBook-Air:design_btlr3 danhodgins$
+
+--------
+
 Rails BUILD vs CREATE
 build and save are equivalent to create
+
 
 ---------
 FEATURES
