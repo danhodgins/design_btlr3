@@ -4,7 +4,8 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @user = current_user
+    @jobs = @user.jobs
   end
 
   # GET /jobs/1
@@ -25,6 +26,8 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+    # Grab the current user ID and populate the @job.user_id
+    @job.user_id = current_user.id
 
     respond_to do |format|
       if @job.save
