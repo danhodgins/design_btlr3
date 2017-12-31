@@ -20,6 +20,13 @@
     <%= form.label :body %>
     <%= form.text_area :body, id: :job_body %>
   </div>
+  
+  <%= form.hidden_field :user_id %>
+  
+   <div class="field">
+	      <%= form.label :user_id %>
+  <%=  form.text_field :user_id %>
+</div>
 
   <div class="actions">
     <%= form.submit %>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  email: 
+  <%= @user.email %>
+</p>
+
+<hr/>
+<h2>User Jobs</h2>
+  <% @user.jobs.each do |job| %>
+  	<%= link_to job.title, job %> | 
+  <% end %>
+<hr/>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
