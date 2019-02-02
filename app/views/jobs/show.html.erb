@@ -1,22 +1,21 @@
 
-<h1>Design BTLR Job</h1>
-
 <p id="notice"><%= notice %></p>
 
 <p>
-	<strong>Job User Id:</strong>
+	<!-- ><strong>Title:</strong> --> 
+	<h1><%= @job.title %></h1>
+</p>
+
+<p>
+	<!-- <strong>Job User Id:</strong> --> 
 	<%= @job.user.id %>
 	
 </p>
 
-<p>
-	<strong>Title:</strong>
-	<%= @job.title %>
-</p>
 
 <p>
-	<strong>Body:</strong>
-	<%= @job.body %>
+	<strong>Job Details</strong>
+<%= simple_format @job.body %>
 </p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |

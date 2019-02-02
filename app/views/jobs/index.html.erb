@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jobs</h1>
+<h1>All Jobs</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
+      <!-- <th>Body</th> --> 
 	   <th>User ID</th>
 	     <th>User Email Address</th>
       <th colspan="3"></th>
@@ -16,11 +16,11 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.title %></td>
-        <td><%= job.body %></td>
+        <td><%= link_to job.title, job %></td>
+        <!-- <td><%= job.body %></td> --> 
 		 <td><%= job.user_id %></td>
 		 <td><%= link_to job.user.email, job.user %></td>
-        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -7,27 +7,634 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+  
+  <!-- Bootstrap core CSS -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+ 
+  <!-- BOOTSTRAP COOKIES-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+  
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+      <![endif]-->
+  
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <style>
+
+  /************* CONTROLS BORDERS FOR CHECKING MARGINS AND SPACING ************* / 
+  /* .border { border: 2px dashed #ff0000; }  */
+
+
+  body { 
+	  /* background-color: #1a1a1a; */
+	  background-color: #fff;
+  }
+
+
+  p { 
+	  font-family: 'Lato', sans-serif; 
+	  font-weight: 400; 
+	  font-size: 120%; 
+	  line-height: 1.55; 
+	  
+	  padding-bottom: 10px; color: #000; }
+
+ li, footer {
+  font-family: 'Lato', sans-serif; 
+  font-weight: 400; 
+  font-size: 120%; 
+  line-height: 1.55; 
+  color: #000;
+  /*color: #e8e8e8; */
+  }
+
+
+
+  a {
+  font-family: 'Lato', sans-serif; 
+  font-size: 100%; 
+  line-height: 1.55; 
+  /* color: #3cd3f2; */
+   color: #33ccff;
+
+  }
+
+  a:hover {
+  font-family: 'Lato', sans-serif; 
+  font-weight: regular;
+  font-size: 100%; 
+  line-height: 1.55; 
+  color: #33ccff;
+
+  }
+
+  /*
+
+  button a:hover {
+  font-family: 'Lato', sans-serif; 
+  font-weight: bold;
+  font-size: 100%; 
+  line-height: 1.55; 
+  color: #ff0000;
+  border-radius:3px;
+
+  }
+
+
+  .btn:hover, .btn-lg:hover, .btn-info:hover, .btn-responsive:hover
+   { 
+  font-family: 'Lato', sans-serif; 
+  font-weight: regular;
+  font-size: 125% !important; 
+  line-height: 1.55; 
+  color: #fff;
+  border-radius:3px;
+  }
+
+  */
+
+  .btn_pricing {
+  font-family: 'Lato', sans-serif; 
+  font-weight: bold;
+  font-size: 125% !important; 
+  line-height: 1.55; 
+  color: #fff;
+  border-radius:3px;
+
+  }
+
+  /* 
+  .btn_pricing:hover {
+  font-family: 'Lato', sans-serif; 
+  font-weight: bold;
+  font-size: 125% !important; 
+  line-height: 1.55; 
+  color: #fff;
+  background-color: #ff0000;
+  }
+  */ 
+
+
+
+  /* 
+  .btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
+      color: #fff;
+      background-color: #00b3db; 
+    
+ 
+  }
+    
+      */
+    
+
+
+  .cta_box { 
+  background-color: #000;
+  padding-top: 20px; 
+  padding-right: 20px; 
+  padding-bottom: 15px; 
+  padding-left: 20px; 
+  text-align: center; 
+  border-radius: 3px;
+   }
+
+
+  how_it_works_form { text-align: center; }
+
+    
+  .panel {
+  	padding: 20px;
+  	margin-top: 20px;
+  	}
+	
+  .panel > h3, .panel > p {
+  	margin: 0;
+  }
+
+  .panel > h3 {
+  margin-bottom:10px;
+  }
+
+  .panel > .btn-lg {
+  	border-radius:3px;
+  	display: block;
+  	margin: 20px auto 0 auto;
+  }
+
+  .panel > ol {
+  	text-align: left;
+  }
+
+  .panel li {
+  font-size: 14px;
+  	color: white;
+  }
+
+
+  .pricing_box {
+
+  border: 2px solid #e8e8e8; 
+  height: 380px; 
+
+  }
+
+
+  .nav-pad {
+   max-height: 400px !important;
+  }
+
+
+  .nav-buttons a {
+  	font-size: 110%;
+  	font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
+  	color: #FFF !important;
+  }
+
+  .nav-buttons a:hover {
+  	color: #3cd3f2 !important;
+  }
+
+  /* greater than mobile screens - MATT  */
+  @media (min-width: 768px) {
+  	.nav-buttons { margin-top: 21px; }
+	
+  }
+
+
+  /********** Nav Menu Breakpoint for Ipad Portrait- FIX ************/
+  /* 
+  @media screen and (max-width: 861px){
+      ul.nav{
+          background-color: #000;
+          position:absolute;
+          top:0px;
+          left:200px; 
+      }
+
+  .navbar-collapse, .nav-pad collapse {
+  background-color: #000;
+  }
+
+
+  }
+
+  /* 991px */ 
+
+  /* NORMAL STYLES */
+  .pricing_box_left { height: 380px; border: 2px solid #e8e8e8;  }
+  .pricing_box_middle { height: 380px; border: 2px solid #e8e8e8;  }
+  .pricing_box_right { height: 380px; border: 2px solid #e8e8e8;  }
+
+
+  /* MAX WIDTH MAKES THEM DISAPPEAR FOR MOBILE*/
+  /* 
+  @media (max-width: 768px) {
+  .nav-buttons { margin-top: 21px; }f
+  .pricing_box_left { height: 380px;}
+  .pricing_box_middle { height: 380px; border-top: 0; padding-top: 0px; margin-top: 0px; }
+  .pricing_box_right { height: 380px; border-top:0; padding-top: 0px; margin-top: 0px; }
+  }
+  */
+
+
+  /* Fix layout issues with a combination of margin-top here in CSS, and hidden or visible for the CTA div itself in HTML. 
+
+        
+  */
+
+
+  /* Media Queries below fixed nav bar issues - https://www.bootply.com/120604 */
+
+  @media (max-width: 992px) {
+      .navbar-header {
+          float: none;
+      }
+      .navbar-left,.navbar-right {
+          float: none !important;
+      }
+      .navbar-toggle {
+          display: block;
+      }
+      .navbar-collapse {
+          border-top: 1px solid transparent;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      }
+      .navbar-fixed-top {
+  		top: 0;
+  		border-width: 0 0 1px;
+  	}
+      .navbar-collapse.collapse {
+          display: none!important;
+      }
+      .navbar-nav {
+          float: none!important;
+  		margin-top: 7.5px;
+  	}
+  	.navbar-nav>li {
+          float: none;
+      }
+      .navbar-nav>li>a {
+          padding-top: 12px;
+          padding-bottom: 12px;
+      }
+      .collapse.in{
+    		display:block !important;
+  	}
+  }
+
+
+
+  .dan_spacer { margin-top: /* 45px; */ }
+
+  		.footer { text-align:center; }
+  		.footer a {font-weight: normal !important;}
+  		#footer_component { margin-top: 100px; margin-bottom: 20px; }
+
+  		.h1_heading, .h3_heading { z-index: 1; color: #fff;  }
+		
+  		h1 {color: #33ccff; font-size: 40px; font-weight: 700; font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;}
+		
+
+  		h2 { color: #33ccff; margin-top: 10px; margin-bottom: 20px; font-size: 200%; font-weight: 400; font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; }
+		
+  		h3 { color: #33ccff; margin-top: 10px; margin-bottom: 10px; font-size: 160%; font-weight: 500; font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; }
+		
+  		h4 { color: #33ccff; margin-top: 10px; margin-bottom: 10px; font-size: 140%; font-weight: 500; font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; }
+
+
+  .list-group-item { background-color: #333; }
+
+  ul li a { font-weight: normal !important; color: #33ccff; } 
+
+  .navbar li a { font-weight: normal !important; color: #33ccff; } 
+
+  .navbar-header { background-color: #000; }
+
+
+  .overlay { padding-left: 15px; padding-top: 15px; padding-right: 15px; padding-bottom: 15px;  text-align: center;  height: 100%; background:#7f7f7f; background:rgba(0,0,0,0.65); color: #fff; }  
+		
+  .head_sub_head { padding-left: 15px; padding-top: 15px; padding-right: 15px; padding-bottom: 15px;  text-align: center;  height: 100%; background:#7f7f7f; color: #fff; }  
+
+  .overlay_form  {  text-align: center;   background: #7f7f7f; background:rgba(0,0,0,0.75); color: #fff;
+
+   }
+
+  /* 
+	
+
+  /* .navbar-nav > li > .dropdown-menu { background-color: #000; } */ 
+
+  ul.nav { margin-left: 40px; }
+
+
+
+
+
+
+  		</style>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   </head>
 
   <body>
 	  
-	  <%= link_to "Jobs", jobs_path %>
 	  
-							<% if user_signed_in? %>
-							  Logged in as <strong><%= current_user.email %></strong>.
-							  User ID: <%= current_user.id %>
-							  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-							  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-							<% else %>
-							  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-							  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-							<% end %>
+	  
+	   <body>
+
+	  <!-- Google Tag Manager (noscript) PASTE IMMEDIATELY AFTER OPENING BODY TAG -->
+	  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLN8XPX"
+	  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	  <!-- End Google Tag Manager (noscript) -->
+
+
+ 
+	  <!--THIS AFFECTS THE BREAKPOINTS & MEDIA QUERIES AND PADDING TOP --> 
+	     <div class="container" style="padding-top: 95px;">
+ 
+
+	  <!-- START NAVBAR COMPONENT -->
+	  <!-- Fixed navbar -->
+	      <nav class="navbar navbar-inverse navbar-fixed-top" style=" height: 80px; " >
+
+    
+	          <div class="navbar-header">   
+	          <!-- LOGO GOES HERE --> 
+       
+
+
+	  <!-- FOR SOME REASON MAX-WIDTH IS THE ONLY THING THAT DOES NOT BREAK THE MEDIA QUERIES FOR A 4X IMAGE -->
+	  <!-- Do Not Add IMG-RESPONSIVE CLASS, WILL BREAK MEDIA QUERIES -->
+
+	 <!-- > <a  href="https://www.designbutler.co"><img style="max-width: 224px; margin-left: 10px;"   alt="Unlimited Graphic Design By Design Butler&trade;" style=""src="/../../../img/db-logo-4x.png"/></a> --> 
+
+
+
+	            <button style="margin-top: 25px;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	              <span class="sr-only">Toggle navigation</span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	            </button>         
+	          </div>
+        
+	          <!-- CONTROLS BG COLOR FOR DROPDOWN WHEN SCREEN SIZE MOBILE-->
+	          <div id="navbar" class="navbar-collapse collapse nav-pad" style="background-color: #000;" >
+           
+	  <ul class="nav navbar-nav nav-buttons" style="padding-bottom: 10px;">
+	  <li> <%= link_to "Jobs", jobs_path %></li>
+	  <li> <%= link_to "Notes", notes_path %></li> 
+	  <% if user_signed_in? %>
+		<!-- <li><%= link_to current_user.email, :class => 'navbar-link' %></li> -->
+		<!-- <li>User ID: <%= current_user.id %></li>  --> 
+		<li><%= link_to 'Account', edit_user_registration_path, :class => 'navbar-link' %></li> 
+		<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+			<% else %>
+			<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+			<li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+			<% end %>
+
+          
+
+	  </ul>     
+
+    
+	          </div><!--/.nav-collapse -->
+     
+	      </nav>
+	  <!-- END NAVBAR COMPONENT -->
+
+
+
 	  
       <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 	  
 	
-    <%= yield %>
+    <%= yield %>            
+                
+                
+                
+<!-- NEW FOOTER -->
+
+
+
+
+<!-- START Bootstrap-Cookie-Alert -->
+<div class="alert text-center cookiealert" role="alert">
+    <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+
+    <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+        I agree
+    </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
+
+<!-- END Bootstrap-Cookie-Alert -->
+
+
+
+
+<div id="footer_component"  style="font-size: 60%; ">
+	<footer class="footer">
+
+
+<div class="row" style="padding-bottom: 50px; font-size: 120%;  ">
+
+<div class="border col-md-2" style="padding: 0px;">
+</div>
+
+
+  <div class="border col-md-2" style="padding: 10px;" >
+<!--    
+<p>INDUSTRIES</p>
+   <ul style="list-style-type: none; margin: 0; padding: 0;">
+   <li><a href="https://www.designbutler.co/marketers.php">Marketers & Agencies</a></li>
+<li><a href="https://www.designbutler.co/software-as-a-service-saas.php">Software-as-a-Service</a></li>
+   <li><a href="https://www.designbutler.co/blockchain.php">Blockchain & Crypto</a></li>
+   <li><a href="https://www.designbutler.co/cannabis.php">Cannabis</a></li>
+
+   </ul>
+-->
+<p>CONNECT</p>
+   <ul style="list-style-type: none; margin: 0; padding: 0;">
+   <li><a href="https://www.instagram.com/designbutler">Instagram</a></li>
+   <li><a href="https://www.twitter.com/designbutler_">Twitter</a></li>
+      <li><a href="https://www.youtube.com/channel/UCGgDirp7x9mnW09BTl5PnMw">YouTube</a></li>
+   <li><a href="https://www.facebook.com/thedesignbutler">Facebook</a></li>
+     <li><a href="https://www.linkedin.com/company/thedesignbutler">LinkedIn</a></li>
+   </ul>
+
+
+
+
+   </div>
+
+
+
+   <div class="border col-md-2" style="padding: 10px; ">
+   <p>OUR SERVICE</p>
+   <ul style="list-style-type: none; margin: 0; padding: 0;">
+<li><a href="https://www.designbutler.co/designers.php">Designers</a></li>
+<li><a href="https://www.designbutler.co/portfolio.php">Portfolio</a></li>
+   <li><a href="https://www.designbutler.co/faq.php">FAQ</a></li>
+
+
+   </ul>
+   </div>
+
+
+    <div class="border col-md-2" style="padding: 10px; " >
+      <p>TRY IT OUT</p>
+   <ul style="list-style-type: none; margin: 0; padding: 0;">
+   <li><a href="https://www.designbutler.co/guarantee.php">Our Guarantee</a></li>
+<li><a href="https://www.designbutler.co/testimonials.php">Testimonials</a></li>
+    <li><a href="https://www.designbutler.co/pricing.php">Pricing</a></li>
+		
+
+   </ul>
+   </div>
+
+
+<!-- ARTICLES GO HERE-->
+    <div class="border col-md-2" style="padding: 10px; " >
+      <p>RECENT ARTICLES</p>
+   <ul style="list-style-type: none; margin: 0; padding: 0;">
+       
+       <li style="padding-bottom: 10px;"><a href="https://www.designbutler.co/articles/5-cannabis-infographic-design">Cannabis Infographic Design #1<a></li>
+       
+       
+       <hr style="max-width: 50px;"/>
+       
+   <li style="padding-bottom: 10px;"><a href="https://www.designbutler.co/articles/1-what-is-the-best-unlimited-graphic-design-service.php">What is the Best Unlimited Graphic Design Service?</a></li>
+
+<hr style="max-width: 50px;"/>
+
+<li style="padding-bottom: 10px;"><a href="https://www.designbutler.co/articles/2-how-much-is-unlimited-graphic-design-price-cost">How Much is Unlimited Graphic Design (Cost/Price)?<a></li>
+
+
+
+
+<hr style="max-width: 50px;"/>
+
+<li style="padding-bottom: 10px;"><a href="https://www.designbutler.co/articles/6-real-estate-tradeshow-postcard">Real Estate Postcard Design #1<a></li>
+
+
+
+
+   </ul>
+   </div>
+
+
+
+
+
+
+
+<div class="border col-md-2" style="padding: 0px;">
+</div>
+
+ </div><!--row-->
+
+
+
+
+
+		<p>&copy; DESIGN BUTLER&trade; MEDIA INC.  &nbsp; &nbsp; &nbsp; </p>
+
+
+<ul style="list-style-type: none; margin: 0; padding: 0;">
+<li><a style="color: #a9a9a9;" href="https://www.designbutler.co/about.php">About Us</a></li>
+<li><a style="color: #a9a9a9;" href="https://www.designbutler.co/management.php">Management Team</a></li>
+<li><a style="color: #a9a9a9;" href="https://www.designbutler.co/privacy-policy.php">Privacy Policy / Terms</a> </li>
+<li><a style="color: #a9a9a9;" href="https://www.designbutler.co/sitemap.xml">Sitemap</a> </li>
+</ul>
+
+
+
+<!-- 
+<div style="padding: 20px; font-size=100%; color: #808080;">
+<span>Made with love in Beautiful BC, Canada</span>
+</div>
+-->
+
+
+	</footer>
+</div>
+
+
+   </div><!-- container -->
+
+
+<div>
+
+
+
+<!--Tawk.to -->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5c08197e40105007f37b22fe/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+<!-- Grab GCLID in Hidden Field -->
+<script type="text/javascript">
+function setCookie(name, value, days){
+    var date = new Date();
+    date.setTime(date.getTime() + (days*24*60*60*1000)); 
+    var expires = "; expires=" + date.toGMTString();
+    document.cookie = name + "=" + value + expires + ";path=/";
+}
+function getParam(p){
+    var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+var gclid = getParam('gclid');
+if(gclid){
+    var gclsrc = getParam('gclsrc');
+    if(!gclsrc || gclsrc.indexOf('aw') !== -1){
+	    setCookie('gclid', gclid, 90);
+	}
+}
+</script> 
+
+
+
+							
+
 
 	
   </body>
