@@ -5,8 +5,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @job.title %></h1>
-
-
+<hr/>
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
+<hr/>
 
 
 <table class="table">
@@ -15,7 +17,7 @@
 		<td>Submitted: <strong><%= time_ago_in_words(@job.created_at) %> ago </strong> </td>
     </tr>
 	  <tr>
-		<td>Updated <strong><%= time_ago_in_words(@job.updated_at) %> ago </strong></td>
+		<td>Updated: <strong><%= time_ago_in_words(@job.updated_at) %> ago </strong></td>
     </tr>
   </thead>
 </table>
