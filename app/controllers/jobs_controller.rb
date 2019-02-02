@@ -4,8 +4,12 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @user = current_user
-    @jobs = @user.jobs
+    # we aren't building an API, so no need to have users/4/jobs work at all! 
+    # if admin == true @jobs - Job.all 
+    # else 
+    #@user = current_user
+    #@jobs = @user.jobs
+    @jobs = Job.all
   end
 
   # GET /jobs/1
