@@ -58,7 +58,7 @@
 
   a {
   font-family: 'Lato', sans-serif; 
-  font-size: 100%; 
+  font-size: 120%; 
   line-height: 1.55; 
   /* color: #3cd3f2; */
    color: #33ccff;
@@ -68,7 +68,7 @@
   a:hover {
   font-family: 'Lato', sans-serif; 
   font-weight: regular;
-  font-size: 100%; 
+  font-size: 120%; 
   line-height: 1.55; 
   color: #33ccff;
 
@@ -375,7 +375,7 @@
     
 	          <div class="navbar-header">   
 	          <!-- LOGO GOES HERE --> 
-       
+       <a  href="http://localhost:3000/jobs"><img style="max-width: 224px; margin-left: 10px;"   alt="Unlimited Graphic Design By Design Butler&trade;" style=""src="https://www.designbutler.co/img/db-logo-4x.png"/></a>
 
 
 	  <!-- FOR SOME REASON MAX-WIDTH IS THE ONLY THING THAT DOES NOT BREAK THE MEDIA QUERIES FOR A 4X IMAGE -->
@@ -398,7 +398,6 @@
            
 	  <ul class="nav navbar-nav nav-buttons" style="padding-bottom: 10px;">
 	  <li> <%= link_to "Jobs", jobs_path %></li>
-	  <li> <%= link_to "Notes", notes_path %></li> 
 	  <% if user_signed_in? %>
 		<!-- <li><%= link_to current_user.email, :class => 'navbar-link' %></li> -->
 		<!-- <li>User ID: <%= current_user.id %></li>  --> 

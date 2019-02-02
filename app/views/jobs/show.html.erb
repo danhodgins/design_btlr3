@@ -1,20 +1,28 @@
 
 <p id="notice"><%= notice %></p>
 
+
+
+
+<p>This job was submitted <strong><%= time_ago_in_words(@job.created_at) %></strong> ago, and was last updated <strong><%= time_ago_in_words(@job.updated_at) %></strong> ago.</p>
+
+
 <p>
 	<!-- ><strong>Title:</strong> --> 
 	<h1><%= @job.title %></h1>
 </p>
 
+<!-- 
 <p>
-	<!-- <strong>Job User Id:</strong> --> 
+	<strong>Job User Id:</strong> 
 	<%= @job.user.id %>
 	
 </p>
+--> 
 
 
 <p>
-	<strong>Job Details</strong>
+	<strong>Creative Brief</strong>
 <%= simple_format @job.body %>
 </p>
 
@@ -22,7 +30,7 @@
 <%= link_to 'Back', jobs_path %>
 
 <hr/>
-<h2>Notes On This job </h2>
+<p>Notes On This job </p>
 <ul>
 	<% @job.notes.each do |note| %>
 	<li><%= note.created_at.strftime('%m/%d/%Y') %> - 
@@ -37,7 +45,7 @@
 <%= render :partial=>"new_note", :locals=>{:note=>@job.notes.build} %>
 
 	<hr/>
-	<h2>Add a Task</h2>
+	<p>Add a Task</p>
 	<ul>
 		<% @job.tasks.each do |task| %>
 		<li><%= task.created_at.strftime('%m/%d/%Y') %> - 

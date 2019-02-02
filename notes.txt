@@ -38,3 +38,9 @@ Started POST "/tasks" for 127.0.0.1 at 2017-12-09 12:41:46 -0800
 Processing by TasksController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"QorxxVQTYjhuOqwhlXR6jl6KYaGi0hvsdk1VkRlBYwNb30h9Vzji+Kjg+fl9nJXAI83LfwrfJOv2bt6tU0fc+w==", "task"=>{"title"=>"qqq", "job_id"=>"3"}, "commit"=>"Create Task"}
 Unpermitted parameter: :job_id
+
+-----
+
+user: designbtlr@gmail.com
+pwd: abcdef 
+user id: 6
