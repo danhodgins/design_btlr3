@@ -1,16 +1,15 @@
 
+<div class="row"><!-- still neeed to end this div -->
+<div class="border col-md-6 " >
+
 <p id="notice"><%= notice %></p>
 
-
-
+<h1><%= @job.title %></h1>
 
 <p>This job was submitted <strong><%= time_ago_in_words(@job.created_at) %></strong> ago, and was last updated <strong><%= time_ago_in_words(@job.updated_at) %></strong> ago.</p>
 
 
-<p>
-	<!-- ><strong>Title:</strong> --> 
-	<h1><%= @job.title %></h1>
-</p>
+
 
 <!-- 
 <p>
@@ -29,14 +28,27 @@
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
 
+
+</div><!-- col-md-8-->
+
+<div class="border col-md-6">
+
 <hr/>
-<p>Notes On This job </p>
-<ul>
+<h3>Notes On This job </h3>
+
+<table class="table">
+  <thead>
+  
 	<% @job.notes.each do |note| %>
-	<li><%= note.created_at.strftime('%m/%d/%Y') %> - 
-		<%= note.body %> - <%= link_to "edit", edit_note_path(note) %>
-		<% end %></li>
-	</ul>
+	  <tr>
+		<td><%= note.body %></td>
+		<td><%= time_ago_in_words(note.created_at) %> ago</td>
+		<td><%= note.created_at.strftime('%m/%d/%Y') %></td>
+		<td><%= link_to "edit", edit_note_path(note) %></td>
+		<% end %>
+    </tr>
+  </thead>
+</table>
 
 	<%#= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
 	<%#= render :partial=>"new_note", :locals=>{:note=>Note.new(:noteable_type=>"job", :noteable_id=>3 )} %>
@@ -44,8 +56,13 @@
 	<!-- Use build here, due to the polymorphic association --> 
 <%= render :partial=>"new_note", :locals=>{:note=>@job.notes.build} %>
 
+
+
+
+
+<!-- 
 	<hr/>
-	<p>Add a Task</p>
+	<h3>Add a Task</h3>
 	<ul>
 		<% @job.tasks.each do |task| %>
 		<li><%= task.created_at.strftime('%m/%d/%Y') %> - 
@@ -58,5 +75,7 @@
 
 		<!-- Use Task.new here, due to the has_many association (I think) --> 
 	
-	<%= render :partial=>"new_task", :locals=>{:task=>Task.new(:job_id=>@job.id)} %>
+	<%#= render :partial=>"new_task", :locals=>{:task=>Task.new(:job_id=>@job.id)} %>
+
+	</div><!-- col-md-4-->
 

@@ -1,4 +1,4 @@
-<p>Add a Note - In Partial </p>
+<h3>Add a Note</h3>
 <%= form_with(model: note, local: true) do |form| %>
   <% if note.errors.any? %>
     <div id="error_explanation">
@@ -12,8 +12,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :body %>
+  <div class="field form_control">
+    <!-- ><%= form.label :body %> --> 
     <%= form.text_area :body, id: :note_body, size: "60x10" %>
   </div>
 <!-- 
@@ -33,5 +33,9 @@
 
   <div class="actions">
     <%= form.submit %>
+
+	
+
+	
   </div>
 <% end %>
