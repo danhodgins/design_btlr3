@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     @user = user 
     mail(
     # to: @user.email, 
-    to: 'designbtlr@gmail.com'
+    to: 'designbtlr@gmail.com',
     subject: 'Welcome to Design Butler HQ'
     )
   
