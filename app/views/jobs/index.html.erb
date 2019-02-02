@@ -8,6 +8,7 @@
 	<th scope="col">Job ID</th>
       <th scope="col">Title</th>
 	  <th scope="col">Submitted</th>
+	  <th scope="col">Updated</th>
       <!-- <th>Body</th> --> 
 	   <th scope="col">DEV: User ID</th>
 	     <th scope="col">Assigned To (Designer)</th>
@@ -21,6 +22,7 @@
         <td><%= link_to job.id, job %></td>
 		<td><strong><%= link_to job.title, job %></strong></td>
 		<td><%= time_ago_in_words(job.created_at) %></td>
+		<td><%= time_ago_in_words(job.updated_at) %></td>
         <!-- <td><%= job.body %></td> --> 
 		 <td><%= job.user_id %></td>
 		 <td><%= link_to job.user.email, job.user %></td>

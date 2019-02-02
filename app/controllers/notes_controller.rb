@@ -1,6 +1,11 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
+  # Before filter - check if user authenticated. If not, redirect to log in page.
+  before_action :authenticate_user!
+
+
+
   # GET /notes
   # GET /notes.json
   # GET /jobs/1/notes
@@ -37,9 +42,8 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-
-        
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.js {  render :layout => false  }
+        format.html {  redirect_to @note, notice: 'Note was successfully created.' }
        
         format.json { render :show, status: :created, location: @note }
         

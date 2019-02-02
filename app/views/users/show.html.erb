@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
+<h1>User</h1>
+<!-- 
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+-->
 <p>
   email: 
   <%= @user.email %>
@@ -7,11 +13,43 @@
 
 <hr/>
 <h2>User Jobs</h2>
-  <% @user.jobs.each do |job| %>
-  	<%= link_to job.title, job %> | 
-  <% end %>
-<hr/>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+	<th scope="col">Job ID</th>
+      <th scope="col">Title</th>
+	  <th scope="col">Submitted</th>
+	  <th scope="col">Updated</th>
+      <!-- <th>Body</th> --> 
+	   <th scope="col">DEV: User ID</th>
+	     <th scope="col">Assigned To (Designer)</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.jobs.each do |job| %>
+      <tr>
+        <td><%= link_to job.id, job %></td>
+		<td><strong><%= link_to job.title, job %></strong></td>
+		<td><%= time_ago_in_words(job.created_at) %></td>
+		<td><%= time_ago_in_words(job.updated_at) %></td>
+        <!-- <td><%= job.body %></td> --> 
+		 <td><%= job.user_id %></td>
+		 <td><%= link_to job.user.email, job.user %></td>
+        <td><%= link_to 'show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
 

@@ -1,6 +1,9 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
+# Before filter - check if user authenticated. If not, redirect to log in page.
+before_action :authenticate_user!
+
   # GET /jobs
   # GET /jobs.json
   def index

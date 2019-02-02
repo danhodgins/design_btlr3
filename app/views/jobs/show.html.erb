@@ -6,8 +6,19 @@
 
 <h1><%= @job.title %></h1>
 
-<p>This job was submitted <strong><%= time_ago_in_words(@job.created_at) %></strong> ago, and was last updated <strong><%= time_ago_in_words(@job.updated_at) %></strong> ago.</p>
 
+
+
+<table class="table">
+  <thead>
+	  <tr>
+		<td>Submitted: <strong><%= time_ago_in_words(@job.created_at) %> ago </strong> </td>
+    </tr>
+	  <tr>
+		<td>Updated <strong><%= time_ago_in_words(@job.updated_at) %> ago </strong></td>
+    </tr>
+  </thead>
+</table>
 
 
 
@@ -19,9 +30,8 @@
 </p>
 --> 
 
-
+<h3>Creative Brief</h3>
 <p>
-	<strong>Creative Brief</strong>
 <%= simple_format @job.body %>
 </p>
 
@@ -33,7 +43,7 @@
 
 <div class="border col-md-6">
 
-<hr/>
+
 <h3>Notes On This job </h3>
 
 <table class="table">
@@ -52,6 +62,12 @@
 
 	<%#= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
 	<%#= render :partial=>"new_note", :locals=>{:note=>Note.new(:noteable_type=>"job", :noteable_id=>3 )} %>
+
+<!-- https://resources.oreilly.com/examples/9780596515775/blob/master/code/chap7_hfror_code_20081129/app/views/flights/show.html.erb -->
+	
+	<!-- The thing to remember with AJAX is that you don't redirect the request (normally), you just generate some text to send back to the browser. -->
+
+
 
 	<!-- Use build here, due to the polymorphic association --> 
 <%= render :partial=>"new_note", :locals=>{:note=>@job.notes.build} %>
