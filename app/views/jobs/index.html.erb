@@ -13,6 +13,7 @@
 	  <th scope="col">Time PH</th>
       <!-- <th>Body</th> --> 
 	   <th scope="col">DEV: User ID</th>
+	    <th scope="col">DEV: Customer ID</th>
 	     <th scope="col">Assigned To (Designer)</th>
       <th scope="col"></th>
     </tr>
@@ -29,6 +30,7 @@
 		<td><%=Time.use_zone('Sydney') { Time.current }.strftime("%I:%M %p") %></td>
         <!-- <td><%= job.body %></td> --> 
 		 <td><%= job.user_id %></td>
+		  <td><%= job.customer_id %></td>
 		 <td><%= link_to job.user.email, job.user %></td>
         <td><%= link_to 'show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>

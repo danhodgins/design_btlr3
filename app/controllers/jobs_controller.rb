@@ -23,6 +23,9 @@ before_action :authenticate_user!
   # GET /jobs/new
   def new
     @job = Job.new
+    
+    
+    
   end
 
   # GET /jobs/1/edit
@@ -35,9 +38,11 @@ before_action :authenticate_user!
     @job = Job.new(job_params)
     # Grab the current user ID and populate the @job.user_id
     @job.user_id = current_user.id
-
+    @job.customer_id = params[:customer_id]
+    
+    
     respond_to do |format|
-      if @job.save
+      if @job.save  
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
@@ -79,6 +84,7 @@ before_action :authenticate_user!
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :body)
+      params.require(:job).permit(:title, :body, :customer_id )
+      #params.require(:customer).permit(:customer_id)
     end
 end

@@ -23,14 +23,24 @@
 </table>
 
 
-
-<!-- 
-<p>
-	<strong>Job User Id:</strong> 
-	<%= @job.user.id %>
+	<div style="border: 1px dashed #a9a9a9;">
+	JOB CUSTOMER ID
+		<h1><%= @job.customer_id %> </h1>
+	</div>
 	
-</p>
---> 
+	<div style="border: 1px dashed #a9a9a9;">
+	JOB ID
+		<h1><%= @job.to_param %> </h1>
+	</div>
+	
+  <%= params.inspect %>
+
+
+
+
+	<strong>Job User Id:</strong> 
+	<%#= @job.user.id %>
+
 
 <h3>Creative Brief</h3>
 <p>

@@ -1,4 +1,10 @@
 
+CHEATSHEET
+
+rake db:rollback
+rake db:migrate
+rake db:fixtures load
+
 --------
 HOW TO SWITCH GIT BRANCHES
 JUST CHECKOUT MASTER, THAT WILL SWITCH YOU
@@ -44,3 +50,13 @@ Unpermitted parameter: :job_id
 user: designbtlr@gmail.com
 pwd: abcdef 
 user id: 6
+
+-----
+
+1 error prohibited this job from being saved:
+Customer must exist
+
+This means you haven't created a migration for the foreign key. 
+e.g. job needs customer_id:references 
+rails g migration AddCustomerToJobs customer:references
+
