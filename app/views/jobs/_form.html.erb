@@ -22,30 +22,11 @@
   </div>
   
 
-  
-  
- 
-  <!-- ><div class="field" > -->
-  	<%#= form.label :customer %>
-  	<%#= form.collection_select :customer, Customer.all, :id, :name, {:prompt => '-- Select a Customer --'} %>
-	<%#= form.hidden_field :customer_id, value: @job.customer_id %>
-	<%#= form.hidden_field :customer_id, :value => @job.customer_id %>
-  <!-- </div>-->
-  
-<div class="field" >
+  <div class="field" >
     <%= form.label :customer %>
     <%= form.collection_select :customer_id, Customer.all, :id, :name, {:prompt => '-- Select a Customer --'} %>
   </div>
 
-<%#= params.inspect %>
-    
-  <%= form.hidden_field :user_id %>
-    <%= form.hidden_field :customer_id %>
-  
-   <div class="field">
-	      <%#= form.label :user_id %>
-  <%#=  form.text_field :user_id %>
-</div>
 
   <div class="actions">
     <%= form.submit %>
