@@ -38,9 +38,7 @@ before_action :authenticate_user!
     @job = Job.new(job_params)
     # Grab the current user ID and populate the @job.user_id
     @job.user_id = current_user.id
-    @job.customer_id = params[:customer_id]
-    
-    
+
     respond_to do |format|
       if @job.save  
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
