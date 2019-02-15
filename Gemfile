@@ -23,7 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 
 #gem 'devise'
 gem 'devise',               '~> 4.3.0'
-gem 'devise', git: 'https://github.com/plataformatec/devise' #, ref: '88e9a85'
+#gem 'devise', git: 'https://github.com/plataformatec/devise' #, ref: '88e9a85'
 
 gem 'rails-erd', require: false, group: :development
 
