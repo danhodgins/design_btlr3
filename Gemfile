@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-gem 'devise'
+gem 'devise', '~> 4.3.0'
 
 gem 'rails-erd', require: false, group: :development
 
